@@ -34,11 +34,19 @@ A RESTful API backend built with Laravel 12 and PHP 8.4, using MySQL for persist
 
 1. Clone the repo (or download source):  
    ```bash
-   git clone https://github.com/G-eat/manage-users.git` 
+   git clone https://github.com/G-eat/manage-users.git
    cd manage-users
    ```
 
-2. Copy `.env.example` to `.env` and update if needed:
+2. Composer install
+    ```bash
+    composer install
+    ```
+
+3. Copy `.env.example` to `.env` and update if needed:
+    ```bash
+   cp .env.example .env
+   ```
 
 - DB_CONNECTION=mysql
 - DB_HOST=mysql
@@ -47,15 +55,21 @@ A RESTful API backend built with Laravel 12 and PHP 8.4, using MySQL for persist
 - DB_USERNAME=root
 - DB_PASSWORD=
 
-3. Generate the application key:
+4. Generate the application key:
 ```bash
 php artisan key:generate
 ```
 
-4. SQL and importing:
+5. SQL and importing:
 
 ```bash
 php artisan migrate
+```
+
+5. Access:
+
+```bash
+php artisan serve
 ```
 
 ---
