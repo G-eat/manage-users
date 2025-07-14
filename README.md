@@ -26,7 +26,7 @@ A RESTful API backend built with Laravel 12 and PHP 8.4, using MySQL for persist
 
 #### Build and start Docker containers (app + MySQL):
 
-`docker-compose up -d --build`
+`docker-compose up --build`
 
 ## Manual instalation
 
@@ -49,7 +49,7 @@ A RESTful API backend built with Laravel 12 and PHP 8.4, using MySQL for persist
    ```
 
 - DB_CONNECTION=mysql
-- DB_HOST=mysql
+- DB_HOST=127.0.0.1
 - DB_PORT=3306
 - DB_DATABASE=company_db
 - DB_USERNAME=root
