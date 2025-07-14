@@ -120,6 +120,296 @@ php artisan serve
 A Postman collection is included in the `public` folder:  
 `User.postman_collection.json`
 
+## Examples
+
+1. Get All Users (Eloquent)
+Endpoint: GET /api/users/eloquent?page=1&per_page=10
+
+Response:
+```bash
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 4,
+            "first_name": "Jane",
+            "last_name": "Doe",
+            "email": "jane.doe123@example.com",
+            "created_at": "2025-07-14T12:29:08.000000Z",
+            "updated_at": "2025-07-14T16:12:32.000000Z"
+        },
+        {
+            "id": 5,
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "1john.doe@example.com",
+            "created_at": "2025-07-14T14:11:04.000000Z",
+            "updated_at": "2025-07-14T14:11:04.000000Z"
+        },
+        {
+            "id": 6,
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "john.doe3@example.com",
+            "created_at": "2025-07-14T16:12:00.000000Z",
+            "updated_at": "2025-07-14T16:12:00.000000Z"
+        }
+    ],
+    "first_page_url": "http://127.0.0.1:8000/api/users/eloquent?page=1",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "http://127.0.0.1:8000/api/users/eloquent?page=1",
+    "links": [
+        {
+            "url": null,
+            "label": "&laquo; Previous",
+            "active": false
+        },
+        {
+            "url": "http://127.0.0.1:8000/api/users/eloquent?page=1",
+            "label": "1",
+            "active": true
+        },
+        {
+            "url": null,
+            "label": "Next &raquo;",
+            "active": false
+        }
+    ],
+    "next_page_url": null,
+    "path": "http://127.0.0.1:8000/api/users/eloquent",
+    "per_page": 10,
+    "prev_page_url": null,
+    "to": 3,
+    "total": 3
+}
+```
+
+2. Create User (Eloquent)
+Endpoint: GET /api/users/eloquent
+
+Body: 
+```bash
+{
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "john.doe@example.com"
+}
+```
+
+Response:
+```bash
+{
+    "message": "User created successfully",
+    "user": {
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "john.doe@example.com",
+        "updated_at": "2025-07-14T15:50:11.000000Z",
+        "created_at": "2025-07-14T15:50:11.000000Z",
+        "id": 7
+    }
+}
+```
+
+3. Get User By ID (Eloquent)
+Endpoint: GET /api/users/eloquent/4
+
+Response:
+```bash
+{
+    "user": {
+        "id": 4,
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "email": "jane.doe123@example.com",
+        "created_at": "2025-07-14T12:29:08.000000Z",
+        "updated_at": "2025-07-14T16:12:32.000000Z"
+    }
+}
+```
+
+4. Update User (Eloquent)
+Endpoint: PUT /api/users/eloquent/4
+
+Body: 
+```bash
+{
+  "first_name": "Jane",
+  "last_name": "Doe",
+  "email": "jane.doe@example.com"
+}
+```
+
+Response:
+```bash
+{
+    "message": "User updated successfully",
+    "user": {
+        "id": 4,
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "email": "jane.doe@example.com",
+        "created_at": "2025-07-14T12:29:08.000000Z",
+        "updated_at": "2025-07-14T15:55:16.000000Z"
+    }
+}
+```
+
+5. Delete User (Eloquent)
+Endpoint: DELETE /api/users/eloquent/4
+
+Response:
+```bash
+{
+    "message": "User deleted successfully"
+}
+
+6. Get All Users
+Endpoint: GET /api/users?page=1&per_page=10
+
+Response:
+```bash
+{
+    "current_page": 1,
+    "data": [
+        {
+            "id": 4,
+            "first_name": "Jane",
+            "last_name": "Doe",
+            "email": "jane.doe123@example.com",
+            "created_at": "2025-07-14T12:29:08.000000Z",
+            "updated_at": "2025-07-14T16:12:32.000000Z"
+        },
+        {
+            "id": 5,
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "1john.doe@example.com",
+            "created_at": "2025-07-14T14:11:04.000000Z",
+            "updated_at": "2025-07-14T14:11:04.000000Z"
+        },
+        {
+            "id": 6,
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "john.doe3@example.com",
+            "created_at": "2025-07-14T16:12:00.000000Z",
+            "updated_at": "2025-07-14T16:12:00.000000Z"
+        }
+    ],
+    "first_page_url": "http://127.0.0.1:8000/api/users/eloquent?page=1",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "http://127.0.0.1:8000/api/users/eloquent?page=1",
+    "links": [
+        {
+            "url": null,
+            "label": "&laquo; Previous",
+            "active": false
+        },
+        {
+            "url": "http://127.0.0.1:8000/api/users/eloquent?page=1",
+            "label": "1",
+            "active": true
+        },
+        {
+            "url": null,
+            "label": "Next &raquo;",
+            "active": false
+        }
+    ],
+    "next_page_url": null,
+    "path": "http://127.0.0.1:8000/api/users/eloquent",
+    "per_page": 10,
+    "prev_page_url": null,
+    "to": 3,
+    "total": 3
+}
+```
+
+7. Create User
+Endpoint: GET /api/users
+
+Body: 
+```bash
+{
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "john.doe@example.com"
+}
+```
+
+Response:
+```bash
+{
+    "message": "User created successfully",
+    "user": {
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "john.doe@example.com",
+        "updated_at": "2025-07-14T15:50:11.000000Z",
+        "created_at": "2025-07-14T15:50:11.000000Z",
+        "id": 7
+    }
+}
+```
+
+8. Get User By ID 
+Endpoint: GET /api/users/4
+
+Response:
+```bash
+{
+    "user": {
+        "id": 4,
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "email": "jane.doe123@example.com",
+        "created_at": "2025-07-14T12:29:08.000000Z",
+        "updated_at": "2025-07-14T16:12:32.000000Z"
+    }
+}
+```
+
+9. Update User
+Endpoint: PUT /api/users/4
+
+Body: 
+```bash
+{
+  "first_name": "Jane",
+  "last_name": "Doe",
+  "email": "jane.doe@example.com"
+}
+```
+
+Response:
+```bash
+{
+    "message": "User updated successfully",
+    "user": {
+        "id": 4,
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "email": "jane.doe@example.com",
+        "created_at": "2025-07-14T12:29:08.000000Z",
+        "updated_at": "2025-07-14T15:55:16.000000Z"
+    }
+}
+```
+
+10. Delete User
+Endpoint: DELETE /api/users/4
+
+Response:
+```bash
+{
+    "message": "User deleted successfully"
+}
+```
+
+
 ### How to import
 
 1. Open Postman  
